@@ -175,11 +175,11 @@ var config = {
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-    {
+    	/*{
              layer: 'heatMapCost',
              opacity: 0,
              //duration: 5000
-         },
+         },*/
           {
              layer:'treeplantinghp',
              opacity:1
@@ -218,14 +218,14 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-			{
+			/*{
                      layer: 'heatMapCost',
                      opacity: 0,
                      //duration: 5000
-                 },
+                 },*/
 				  {
 					 layer:'treeplantinghp',
-					 opacity:0
+					 opacity:1
 				 },
 				{
 					layer:'chargati-hightreecoverdensity',
@@ -260,10 +260,10 @@ var config = {
                      opacity: 1,
                      duration: 5000
                  },
-				  {
+				 /* {
 					 layer:'heatMapCost',
 					 opacity:0
-				 },
+				 },*/
 				{
 					layer:'treeplantinghp',
 					opacity:1
@@ -296,11 +296,11 @@ var config = {
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-    {
+    	/*{
              layer: 'heatMapCost',
              opacity: 0,
              //duration: 5000
-         },
+         },*/
           {
              layer:'treeplantinghp',
              opacity:1
@@ -338,10 +338,10 @@ var config = {
                     opacity: 1,
                     //duration: 5000
                 },
-                 {
+                /* {
                     layer:'heatMapCost',
                     opacity:0
-                },
+                },*/
                {
                    layer:'treeplantinghp',
                    opacity:1
