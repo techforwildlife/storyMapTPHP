@@ -15,7 +15,7 @@ var config = {
 	//logo: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/MongabayBug.svg',
     //subtitle: 'we can put some text here',
     byline: 'By: Technology for Wildlife Foundation and Mongabay India',
-    footer: footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>Cover image: Sahil Dhiman/Wikimedia Commons; Other images: Pushpendra Rana, etc. ',
+    footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>Cover image: Sahil Dhiman/Wikimedia Commons; Other images: Pushpendra Rana, etc. ',
     chapters: [
 		{
             id: 'backgroundImage',
