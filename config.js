@@ -177,12 +177,12 @@ var config = {
     onChapterEnter: [
     {
              layer: 'heatMapCost',
-             opacity: 0.5,
+             opacity: 0,
              //duration: 5000
          },
           {
              layer:'treeplantinghp',
-             opacity:0
+             opacity:1
          },
         {
             layer:'killardhar-notforest',
@@ -262,11 +262,11 @@ var config = {
                  },
 				  {
 					 layer:'heatMapCost',
-					 opacity:0.5
+					 opacity:0
 				 },
 				{
 					layer:'treeplantinghp',
-					opacity:0
+					opacity:1
 				}
 				 ],
             onChapterExit: [
@@ -298,12 +298,12 @@ var config = {
     onChapterEnter: [
     {
              layer: 'heatMapCost',
-             opacity: 0.5,
+             opacity: 0,
              //duration: 5000
          },
           {
              layer:'treeplantinghp',
-             opacity:0
+             opacity:1
          },
         {
             layer:'basaral-landtenureconflicts',
@@ -340,11 +340,11 @@ var config = {
                 },
                  {
                     layer:'heatMapCost',
-                    opacity:0.5
+                    opacity:0
                 },
                {
                    layer:'treeplantinghp',
-                   opacity:0
+                   opacity:1
                }
             ],
             onChapterExit: [
