@@ -11,26 +11,46 @@ var config = {
     use3dTerrain: false, //set true for enabling 3D maps.
     title: 'Tree plantations in Himachal Pradesh and why they could go waste',
 	//image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/TFWLogo.svg'
-    logo:'images/Mongabay_India_x_TfW_Logo_for_WhiteBG.svg',
+    logo:'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/Mongabay_India_x_TfW_Logo_for_WhiteBG.svg',
 	//logo: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/MongabayBug.svg',
-    //subtitle: 'we can put some text here',
-    byline: 'By: Technology for Wildlife Foundation and Mongabay India',
-    footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>Cover image: Sahil Dhiman/Wikimedia Commons; Other images: Pushpendra Rana, etc. ', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+    //subtitle: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be? ',
+    byline: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be?',
+    mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
+	footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>Cover image: Sahil Dhiman/Wikimedia Commons; Other images: Pushpendra Rana, etc. ', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
 		{
             id: 'backgroundImage',
-            alignment: 'full',
-            title: 'Tree planting in Himachal Pradesh',
+            alignment: 'left',
+            title: '',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hill_scenery_with_small_stream%2C_somewhere_in_Himachal_Pradesh%2C_India.jpg/800px-Hill_scenery_with_small_stream%2C_somewhere_in_Himachal_Pradesh%2C_India.jpg?20220118120757',
-            description: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be? A study analysing afforestation activities in Himachal Pradesh predicts that over half of the budget spent will be wasted on plantations that unlikely to survive or help increase forest cover.',
-            location: {
+            description: 'A <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">study</a> analysing afforestation activities in Himachal Pradesh predicts that over half of the budget spent will be wasted on plantations that are unlikely to survive or help increase forest cover.',
+            location: {/*
                 center: [76.274342, 32.107912],
                 zoom: 8,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00*/
+				center: [76.513467, 31.692998], 
+                zoom: 7,
+                pitch: 40,
+                bearing: 0
             },
 			onChapterEnter: [
-                
+				{
+					layer: 'hp',
+					opacity: 1,
+				},
+				{
+					layer: 'treeplantinghp',
+                     opacity: 0,
+				},
+				{
+					layer: 'heatMap',
+                     opacity: 0,
+				},
+				{
+					layer: 'heatMapCost',
+                     opacity: 0,
+				}
             ],
             onChapterExit: [
                 
@@ -43,17 +63,22 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Tree plantations in the Himalayan state',
-            image: 'images/page 2 inset.jpg',
-            description: 'As per Himachal Pradesh Forest Department records, 2,809 plantations were planted between January 2016 and July 2019. The map represents 2,024 plantations with complete data. The data for the remaining 785 plantations was missing, as per the study. Government-owned land was largely preferred for the plantation activity. Community-owned lands and areas with contested boundaries were also chosen. Following national goals of increasing tree cover, the state aims to bring 30% of its total geographical area (55,673 km sq.) under forest cover by 2030. The current forest cover is 27.72%.',
+            image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 2 inset.jpg',
+            description: '<p>As per Himachal Pradesh Forest Department records, 2,809 plantations took place between January 2016 and July 2019. The map represents 2,024 plantations with complete data. The data for the remaining 785 plantations was missing, as per the study. On average, an individual plantation is 5.5 hectare in size.</p><p>Government-owned land was largely preferred for the plantation activity. Community-owned lands and areas with contested boundaries were also chosen.</p><p>Following national goals of increasing tree cover, the state aims to bring <a href="https://timesofindia.indiatimes.com/city/shimla/hp-aims-to-increase-30-forest-cover-by-2030/articleshow/74052138.cms?utm_campaign=cppst%26utm_medium=text%26utm_source=contentofinterest" target="_blank">30%;</a> of its total geographical area (55,673 km sq.) under forest cover by 2030. The current forest cover is 27.72%.</p>',
             location: {
                 center: [76.513467, 31.692998], 
                 zoom: 7,
                 pitch: 40,
                 bearing: 0
+				//dragPan: false,
+				//minZoom: 5,
+				//bounds:[73.418945,30.373954, 80.371443,33.079329],
+				//maxBounds: [73.418945,30.073954, 80.371443,33.979329]
             },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
+            //mapAnimation: 'flyTo',
+            //rotateAnimation: false,
+			//mapInteractive: true,
+            //callback: '',
             onChapterEnter: [
                  {
                      layer: 'treeplantinghp',
@@ -80,10 +105,10 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'How much was spent?',
-            image: 'images/page 3 inset.jpg',
+            image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 3 inset.jpg',
             legend: '<span style="font-size: 0.85em;"><em> Cost Heat Map ($)</em></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #31a354; "></span><span>  0 - 27</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #addd8e; "></span><span>  27 - 8962</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #fec44f; "></span><span>  8962 - 17896</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #d95f0e; "></span><span>  17896 - 26831</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #FF0000; "></span><span>  26831 - 35765.1</span></span>',
 			//legend: '<p style="font-size: 12px;line-height: 24px;font-weight: normal;color: #848484;padding: 0;margin: 0;"><b>COLOR:</b> <span style="width: 15px; height: 15px; margin:auto; display: inline_block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #FF0000 "></span> </p>'
-			description: '<p>The state Forest Department spent $5.67 million (about Rs. 43.4 crores) on 2,024 plantations. The amount per plantation ranged from $27 (about Rs. 2,000) to $35765.7 (about Rs. 27 lakhs). The forest department was obligated to release the data after an MLA raised a question about afforestation spending in the parliament, which led to the data becoming available for public.</p>',
+			description: '<p>The state Forest Department spent $5.67 million (about Rs. 43.4 crores) on 2,024 plantations. The amount per plantation ranged from $27 (about Rs. 2,000) to $35765.7 (about Rs. 27 lakhs).</p><p>The forest department was obligated to release the data after an MLA raised a question about afforestation spending in the state legislature, which led to the data becoming available for public.</p>',
 
             location: {
                 center: [76.513467, 31.692998],
@@ -91,9 +116,9 @@ var config = {
                 pitch: 30,
                 bearing: 0
             },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
+            //mapAnimation: 'flyTo',
+            //rotateAnimation: false,
+            //callback: '',
             onChapterEnter: [
                  {
                      layer: 'treeplantinghp',
@@ -121,18 +146,18 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Predicted mortality',
-            image: 'images/page 4 inset graph.jpg',
+            image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 4 inset graph.jpg',
 			legend: '<span style="font-size: 0.85em;"><em>Mortality Heat Map (%)</em></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #31a354; "></span><span>  0 - 5</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #addd8e; "></span><span>  5 - 28</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #fec44f; "></span><span>  28 - 51</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #d95f0e; "></span><span>  51 - 74</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #FF0000; "></span><span>  74 - 98</span></span>',
-            description: '<p>Researchers combined data on the location, site conditions, and budgets, with a machine learning model, trained on past land cover change, to predict the likelihood of future tree cover loss in plantation areas. They found over half of the state’s tree planting budget is wasted on plantations that are unlikely to survive and/or are poorly designed to achieve the state’s goal of increasing forest cover. Tree mortality predicted by the study due to plantation in the following types of places:</p><p>A. Non-forest unproductive areas.</p>B. Areas with extensive southern exposure</p><p>C. Forests with contested land tenure.</p><p>D. Forests that have more than 40% canopy cover.</p>',
+            description: '<p>Researchers combined data on the location, site conditions, and budgets, with a machine learning model, trained on past land cover change, to predict the likelihood of future tree cover loss in plantation areas. While the state’s goal is to increase forest cover, the study found that over half of the state’s tree planting budget is wasted on plantations that are unlikely to survive and/or are poorly designed.</p><p>The study predicted tree mortality due to plantation in the following types of places:</p><p>A. Non-forest unproductive areas.</p>B. Areas with extensive southern exposure</p><p>C. Forests with contested land tenure.</p><p>D. Forests that have more than 40% canopy cover.</p>',
             location: {
                 center: [76.513467, 31.692998],
                 zoom: 7,
                 pitch: 20,
                 bearing: 0
             },
-            mapAnimation: 'flyTo',
+            /*mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
+            callback: '',*/
             onChapterEnter: [
                  {
                      layer: 'treeplantinghp',
@@ -156,14 +181,14 @@ var config = {
     id: 'seventh-identifier',
     alignment: 'left',
     hidden: false,
-    title: 'Planting in unproductive areas - Killar',
-    image: 'images/page 5_6 inset graph.jpg',
+    title: 'Planting where trees might not grow - Killar',
+    image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 5_6 inset graph.jpg',
     description: 'Areas such as Killar on the gorge of the Chenab river are non-forest unproductive areas which have negligible tree growth. Tree cover loss is likely to be high if plantations are carried out in such areas where environmental conditions act as natural barriers to growing trees. About 48% (USD 2.7 million) of the afforestation budget was spent in such areas. According to the study, tree plantations were also undertaken in the non-forest, cold desert areas of Spiti Valley.',
     location: {
         center: [76.427, 33.104],
         zoom: 13,
         pitch: 8,
-        bearing: 0,
+        bearing: 0
         // flyTo additional controls-
         // These options control the flight curve, making it move
         // slowly and zoom out almost completely before starting
@@ -171,9 +196,9 @@ var config = {
         //speed: 2, // make the flying slow
         //curve: 1, // change the speed at which it zooms out
     },
-    mapAnimation: 'flyTo',
+    /*mapAnimation: 'flyTo',
     rotateAnimation: false,
-    callback: '',
+    callback: 'turnPopupsOn(treeplantinghp)',*/
     onChapterEnter: [
     {
              layer: 'heatMapCost',
@@ -204,14 +229,14 @@ var config = {
             id: 'fifth-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Planting in areas with high tree cover - Chargathi',
-            image: 'images/page 5_6 inset graph.jpg',
-            description: 'The study finds plantations also occurred  in areas with high tree cover, such as Chargati where planting is likely unnecessary to maintain forest. Nearly 38% of the afforestation budget (USD 2.6 million) was allocated to areas that already had moderate or high tree density. On the contrary, only 14% of the spending goes to forest areas with canopy cover between 10% and 40% where reforestation potential is most likely to be high.',
+            title: 'Planting where there are a lot of trees - Chargati',
+            image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 5_6 inset graph.jpg',
+            description: '<p>The study finds plantations also occurred  in areas with high tree cover, such as Chargati where planting is likely unnecessary to maintain forest.</p><p>Nearly 38% of the afforestation budget (USD 2.6 million) was allocated to areas that already had moderate or high tree density.</p><p>On the contrary, only 14% of the spending goes to forest areas with canopy cover between 10% and 40% where reforestation potential is most likely to be high.</p>',
             location: {
                 center: [77.102, 31.498],
                 zoom: 13,
                 pitch: 8,
-                bearing: 0,
+                bearing: 0
                 // flyTo additional controls-
                 // These options control the flight curve, making it move
                 // slowly and zoom out almost completely before starting
@@ -219,9 +244,9 @@ var config = {
                 //speed: 2, // make the flying slow
                 //curve: 1, // change the speed at which it zooms out
             },
-            mapAnimation: 'flyTo',
+            /*mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
+            callback: '',*/
             onChapterEnter: [
 			{
                      layer: 'heatMapCost',
@@ -261,9 +286,9 @@ var config = {
                 pitch: 8.01,
                 bearing: 0.00
             },
-            mapAnimation: 'flyTo',
+            /*mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
+            callback: '',*/
             onChapterEnter: [
 			{
                      layer: 'behnota-high-south-exposure',
@@ -292,9 +317,9 @@ var config = {
     id: 'eighth-identifier',
     alignment: 'left',
     hidden: false,
-    title: 'Planting in contested areas - Basaral-LandTenureConflicts',
-    image: 'images/page 8_9 inset graph.jpg',//./path/to/image/source.png',
-    description: 'In Himachal Pradesh, 67% of the land is under the forest department, but a vast chunk of these lands have overlapping uses and local communities have rights to access. One-third of the afforestation budget( $1.64 million) was directed at Undemarcated Protected Forests, a forest tenure type. UPFs are not notified and their boundaries are not marked on the ground, leading to contested boundaries with private or village-owned lands. Tree planting in contested areas can restrict access for pastoralists and forest dependent communities to resources including grazing, fodder, or fuelwood. It can lead to social conflicts and ultimately, plantations are less likely to survive.',
+    title: 'Planting trouble - Basaral',
+    image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 8_9 inset graph.jpg',//./path/to/image/source.png',
+    description: '<p>In Himachal Pradesh, 67% of the land is under the forest department, but a vast chunk of these lands have overlapping uses and local communities have rights to access.</p><p>One-third of the afforestation budget( $1.64 million) was directed at Undemarcated Protected Forests, a forest tenure type. UPFs are not notified and their boundaries are not marked on the ground, leading to contested boundaries with private or village-owned lands.</p><p>Tree planting in contested areas can restrict access for pastoralists and forest dependent communities to resources including grazing, fodder, or fuelwood. It can lead to social conflicts and ultimately, plantations are less likely to survive.</p>',
     location: {
         center: [76.369, 31.708],
         zoom: 13.5,
@@ -307,9 +332,9 @@ var config = {
         //speed: 2, // make the flying slow
         //curve: 1, // change the speed at which it zooms out
     },
-    mapAnimation: 'flyTo',
+    /*mapAnimation: 'flyTo',
     rotateAnimation: false,
-    callback: '',
+    callback: '',*/
     onChapterEnter: [
     {
              layer: 'heatMapCost',
@@ -340,18 +365,18 @@ var config = {
             id: 'fourth-chapter',
             alignment: 'left',
             hidden: false,
-            title: 'Planting sans people participation - Rey Kangra',
-            image: 'images/page 8_9 inset graph.jpg',///path/to/image/source.png',
-            description: 'As per several studies, lack of local community buy-in and involvement can be a key reason for failure of afforestation activities. Only about 1% of tree planting funds ($0.06 million) went towards Cooperative Forest Societies - forests established by the government to ensure high participation of local communities in forest protection and management. The analysis revealed that the trees species were also mostly commercial timber trees and not species that would benefit rural communities which led to low motivation to actively support and safeguard a plantation.',
+            title: 'Planting without people participation - Rey Kangra',
+            image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/page 8_9 inset graph.jpg',///path/to/image/source.png',
+            description: '<p>As per several studies, lack of local community buy-in and involvement can be a key reason for failure of afforestation activities.</p><p>Only about 1% of tree planting funds ($0.06 million) went towards Cooperative Forest Societies - forests established by the government to ensure high participation of local communities in forest protection and management.</p><p>The analysis revealed that the trees species were also mostly commercial timber trees and not species that would benefit rural communities which led to low motivation to actively support and safeguard a plantation.</p>',
             location: {
                 center: [75.871, 31.985],
                 zoom: 13.5,
                 pitch: 8,
                 bearing: 0
             },
-            mapAnimation: 'flyTo',
+            /*mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
+            callback: '',*/
             onChapterEnter: [
                 {
                     layer: 'rey-kangra',
