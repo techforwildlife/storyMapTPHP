@@ -11,11 +11,12 @@ var config = {
     use3dTerrain: false, //set true for enabling 3D maps.
     title: 'Tree plantations in Himachal Pradesh and why they could go waste',
 	//image: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/TFWLogo.svg'
-    logo:'images/Mongabay_India_x_TfW_Logo_for_WhiteBG.svg',
+    
 	//logo: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/MongabayBug.svg',
     //subtitle: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be? ',
     byline: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be?',
-    mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
+    logo:'images/Mongabay_India_x_TfW_Logo_for_WhiteBG.svg',
+	mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
 	footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>Cover image: Sahil Dhiman/Wikimedia Commons; Other images: Pushpendra Rana, etc. ', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
 		{
