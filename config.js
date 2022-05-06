@@ -16,14 +16,14 @@ var config = {
 	//logo: 'H:/TechForWildlife/TreePlantingHP/upgradedStoryMap/mapbox-storytelling-upgraded-main/src/images/MongabayBug.svg',
     //subtitle: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be? ',
     
-    //mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
+    mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
 	footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022; </a>', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
 		{
             id: 'backgroundImage',
             alignment: 'left',
             title: '',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hill_scenery_with_small_stream%2C_somewhere_in_Himachal_Pradesh%2C_India.jpg/800px-Hill_scenery_with_small_stream%2C_somewhere_in_Himachal_Pradesh%2C_India.jpg?20220118120757',
+            image: 'images/page 1 bg.jpg',
             description: 'A <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">study</a> analysing afforestation activities in Himachal Pradesh predicts that over half of the budget spent will be wasted on plantations that are unlikely to survive or help increase forest cover.',
             location: {/*
                 center: [76.274342, 32.107912],
@@ -36,6 +36,10 @@ var config = {
                 bearing: 0
             },
 			onChapterEnter: [
+				{
+					layer: 'mortality',
+                     opacity: 0,
+				},
 				{
 					layer: 'hp',
 					opacity: 1,
@@ -59,7 +63,8 @@ var config = {
 				{
 					layer: 'terrain',
                      opacity: 0,
-				}
+				},
+				
             ],
             onChapterExit: [
                 
@@ -95,6 +100,10 @@ var config = {
                      //duration: 5000
                  },
 				 {
+					layer: 'mortality',
+                     opacity: 0,
+				},
+				 {
 					 layer:'heatMap',
 					 opacity:0
 				 },
@@ -110,7 +119,8 @@ var config = {
 				{
 					layer: 'terrain',
                     opacity: 0,
-				}
+				},
+				
             ],
             onChapterExit: [
                  
@@ -161,7 +171,11 @@ var config = {
 				 {
 					layer: 'terrain',
                     opacity: 0,
-				}
+				},
+				{
+					layer: 'mortality',
+                     opacity: 0,
+				},
 				
             ],
             onChapterExit: [
@@ -176,7 +190,7 @@ var config = {
             hidden: false,
             title: 'Predicted mortality',
             image: 'images/page 4 inset graph.jpg',
-			legend: '<span style="font-size: 0.85em;"><em>Mortality Heat Map (%)</em></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #31a354; "></span><span>  0 - 5</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #addd8e; "></span><span>  5 - 28</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #fec44f; "></span><span>  28 - 51</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #d95f0e; "></span><span>  51 - 74</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #FF0000; "></span><span>  74 - 98</span></span>',
+			legend: '<span style="font-size: 0.85em;"><em>Mortality Rate (%)</em></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #ffffb2; "></span><span>  0 - 0.2</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #fecc5c; "></span><span>  0.2 - 0.4</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #fd8d3c; "></span><span>  0.4 - 0.6</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #f03b20; "></span><span>  0.6 - 0.8</span></br><span style="width: 15px; height: 15px; margin:auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background: #bd0026; "></span><span>  0.8 - 1.0</span></span>',
             description: '<p>Researchers combined data on the location, site conditions, and budgets, with a machine learning model, trained on past land cover change, to predict the likelihood of future tree cover loss in plantation areas. While the state’s goal is to increase forest cover, the study found that over half of the state’s tree planting budget is wasted on plantations that are unlikely to survive and/or are poorly designed.</p><p>The study predicted tree mortality due to plantation in the following types of places:</p><p>A. Non-forest unproductive areas.</p>B. Areas with extensive southern exposure</p><p>C. Forests with contested land tenure.</p><p>D. Forests that have more than 40% canopy cover.</p>',
             location: {
                 center: [76.513467, 31.692998],
@@ -194,8 +208,12 @@ var config = {
                      //duration: 5000
                  },
 				 {
+					layer: 'mortality',
+                     opacity: 1,
+				},
+				 {
 					 layer:'heatMap',
-					 opacity:1
+					 opacity:0
 				 },
 				{
 					layer:'heatMapCost',
@@ -247,6 +265,10 @@ var config = {
              opacity: 0,
              //duration: 5000
          },
+		 {
+					layer: 'mortality',
+                     opacity: 0,
+				},
           {
              layer:'treeplantinghp',
              opacity:1
@@ -259,7 +281,8 @@ var config = {
 		{
 			layer: 'terrain',
 			opacity: 1,
-		}
+		},
+		
          ],
     onChapterExit: [
 
@@ -290,6 +313,10 @@ var config = {
             callback: '',*/
             onChapterEnter: [
 			{
+					layer: 'mortality',
+                     opacity: 0,
+				},
+			{
                      layer: 'heatMapCost',
                      opacity: 0,
                      //duration: 5000
@@ -311,7 +338,8 @@ var config = {
 				{
 					layer: 'terrain',
                      opacity: 1,
-				}
+				},
+				
 				 ],
             onChapterExit: [
 			
@@ -328,13 +356,17 @@ var config = {
             location: {
                 center: [76.188, 32.789],
                 zoom: 13,
-                pitch: 8.01,
+                pitch: 40,
                 bearing: 0.00
             },
             /*mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',*/
             onChapterEnter: [
+			{
+					layer: 'mortality',
+                     opacity: 0,
+				},
 			{
                      layer: 'behnota-high-south-exposure',
                      opacity: 1,
@@ -372,7 +404,7 @@ var config = {
     location: {
         center: [76.369, 31.708],
         zoom: 13.5,
-        pitch: 8,
+        pitch: 40,
         bearing: 0,
         // flyTo additional controls-
         // These options control the flight curve, making it move
@@ -385,6 +417,10 @@ var config = {
     rotateAnimation: false,
     callback: '',*/
     onChapterEnter: [
+	{
+					layer: 'mortality',
+                     opacity: 0,
+				},
     {
              layer: 'heatMapCost',
              opacity: 0,
@@ -424,13 +460,17 @@ var config = {
             location: {
                 center: [75.871, 31.985],
                 zoom: 13.5,
-                pitch: 8,
+                pitch: 40,
                 bearing: 0
             },
             /*mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',*/
             onChapterEnter: [
+				{
+					layer: 'mortality',
+                     opacity: 0,
+				},
                 {
                     layer: 'rey-kangra',
                     opacity: 1,
