@@ -150,6 +150,10 @@ var config = {
 			//mapInteractive: true
             //callback: '',
             onChapterEnter: [
+		    {
+					layer: 'mortality',
+                     opacity: 0,
+				},
                  {
 					layer:'categoryHPCost',
 					opacity:1
@@ -172,10 +176,7 @@ var config = {
 					layer: 'terrain',
                     opacity: 0,
 				},
-				{
-					layer: 'mortality',
-                     opacity: 0,
-				},
+				
 				
             ],
             onChapterExit: [
