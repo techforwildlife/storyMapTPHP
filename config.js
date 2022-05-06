@@ -37,6 +37,10 @@ var config = {
             },
 			onChapterEnter: [
 				{
+					layer: 'treeplantinghp',
+                     opacity: 0,
+				},
+				{
 					layer: 'mortality',
                      opacity: 0,
 				},
@@ -44,10 +48,7 @@ var config = {
 					layer: 'hp',
 					opacity: 1,
 				},
-				{
-					layer: 'treeplantinghp',
-                     opacity: 0,
-				},
+				
 				{
 					layer: 'heatMap',
                      opacity: 0,
