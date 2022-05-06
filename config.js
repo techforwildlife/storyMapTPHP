@@ -224,7 +224,7 @@ var config = {
     location: {
         center: [76.427, 33.104],
         zoom: 12,
-        pitch: 8,
+        pitch: 40,
         bearing: 0
         // flyTo additional controls-
         // These options control the flight curve, making it move
@@ -276,7 +276,7 @@ var config = {
             location: {
                 center: [77.102, 31.498],
                 zoom: 13,
-                pitch: 8,
+                pitch: 40,
                 bearing: 0
                 // flyTo additional controls-
                 // These options control the flight curve, making it move
