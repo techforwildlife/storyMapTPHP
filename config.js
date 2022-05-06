@@ -38,7 +38,8 @@ var config = {
 			onChapterEnter: [
 				{
 					layer: 'treeplantinghp',
-                     opacity: 0.05,
+                     opacity: 0,
+					duration: 5,
 				},
 				{
 					layer: 'mortality',
