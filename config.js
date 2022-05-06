@@ -17,7 +17,7 @@ var config = {
     //subtitle: 'Tree planting is widely promoted as a natural solution to restore forests and absorb carbon from the atmosphere. India places heavy emphasis and budgets on tree planting in its global climate change goals. But how effective will tree plantations be? ',
     
     //mobileview: '<div id="rotate-mobile"><em>For optimal viewing of this storytelling map on mobile, rotate your device to a horizontal orientation.</em>',
-	footer: 'Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022 </a>', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+	footer: '<p><small>Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">Predicting wasteful spending in tree planting programs in Indian Himalaya, World Development, June 2022</a></small></p><p><small>Concept and Text: Kartik Chandramouli; Cartography: <a href="https://www.techforwildlife.com/" target="_blank">Technology for Wildlife Foundation</a> Copy Edits: Priyanka Shankar and Aditi Tandon</small></p>', //template.<br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
 		{
             id: 'backgroundImage',
