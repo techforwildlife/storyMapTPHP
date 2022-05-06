@@ -27,7 +27,7 @@ var config = {
             description: 'A <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X22000547" target="_blank">study</a> analysing afforestation activities in Himachal Pradesh predicts that over half of the budget spent will be wasted on plantations that are unlikely to survive or help increase forest cover.',
             location: {/*
                 center: [76.274342, 32.107912],
-                zoom: 5,
+                zoom: 6.2,
                 pitch: 0.00,
                 bearing: 0.00*/
 				center: [76.513467, 31.692998], 
@@ -81,7 +81,7 @@ var config = {
             description: '<p>As per Himachal Pradesh Forest Department records, 2,809 plantations took place between January 2016 and July 2019. The map represents 2,024 plantations with complete data. The data for the remaining 785 plantations was missing, as per the study. On average, an individual plantation is 5.5 hectare in size.</p><p>Government-owned land was largely preferred for the plantation activity. Community-owned lands and areas with contested boundaries were also chosen.</p><p>Following national goals of increasing tree cover, the state aims to bring <a href="https://timesofindia.indiatimes.com/city/shimla/hp-aims-to-increase-30-forest-cover-by-2030/articleshow/74052138.cms?utm_campaign=cppst%26utm_medium=text%26utm_source=contentofinterest" target="_blank">30%;</a> of its total geographical area (55,673 km sq.) under forest cover by 2030. The current forest cover is 27.72%.</p>',
             location: {
                 center: [76.513467, 31.692998], 
-                zoom: 6,
+                zoom: 6.2,
                 pitch: 40,
                 bearing: 0
 				//dragPan: false,
@@ -139,7 +139,7 @@ var config = {
 
             location: {
                 center: [76.513467, 31.692998],
-                zoom: 5,
+                zoom: 6.2,
                 pitch: 30,
                 bearing: 0,
 				dragPan: false
@@ -195,7 +195,7 @@ var config = {
             description: '<p>Researchers combined data on the location, site conditions, and budgets, with a machine learning model, trained on past land cover change, to predict the likelihood of future tree cover loss in plantation areas. While the state’s goal is to increase forest cover, the study found that over half of the state’s tree planting budget is wasted on plantations that are unlikely to survive and/or are poorly designed.</p><p>The study predicted tree mortality due to plantation in the following types of places:</p><p>A. Non-forest unproductive areas.</p>B. Areas with extensive southern exposure</p><p>C. Forests with contested land tenure.</p><p>D. Forests that have more than 40% canopy cover.</p>',
             location: {
                 center: [76.513467, 31.692998],
-                zoom: 5,
+                zoom: 6.2,
                 pitch: 20,
                 bearing: 0
             },
